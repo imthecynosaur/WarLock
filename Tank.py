@@ -46,13 +46,3 @@ class Tank:
                     math.cos(math.radians(teta))
                 self.rect.centery -= Tank.velocity * \
                     math.sin(math.radians(teta))
-
-        return teta
-
-
-# tank1 = Tank(200, 300)
-
-# while True:
-#     n = int(input())
-#     m = int(input())
-#     print(tank1.move(n, m))
