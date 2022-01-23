@@ -6,7 +6,7 @@ import math
 
 class Tank:
 
-    velocity = 8
+    velocity = 4
     image = pygame.image.load(os.path.join('Assets/Images/tank.png'))
     scale = 0.07
 
@@ -26,22 +26,12 @@ class Tank:
         if (abs((destination_y - self.rect.centery)) < 4 and abs(destination_x - self.rect.centerx) < 4):
             return
         else:
-            if((destination_x - self.rect.centerx) > 0 and (destination_y - self.rect.centery) > 0):
+            if((destination_x - self.rect.centerx) > 0):
                 self.rect.centerx += Tank.velocity * \
                     math.cos(math.radians(teta))
                 self.rect.centery += Tank.velocity * \
                     math.sin(math.radians(teta))
-            elif((destination_x - self.rect.centerx) > 0 and (destination_y - self.rect.centery) < 0):
-                self.rect.centerx += Tank.velocity * \
-                    math.cos(math.radians(teta))
-                self.rect.centery += Tank.velocity * \
-                    math.sin(math.radians(teta))
-            elif((destination_x - self.rect.centerx) < 0 and (destination_y - self.rect.centery) < 0):
-                self.rect.centerx -= Tank.velocity * \
-                    math.cos(math.radians(teta))
-                self.rect.centery -= Tank.velocity * \
-                    math.sin(math.radians(teta))
-            elif((destination_x - self.rect.centerx) < 0 and (destination_y - self.rect.centery) > 0):
+            elif((destination_x - self.rect.centerx) < 0):
                 self.rect.centerx -= Tank.velocity * \
                     math.cos(math.radians(teta))
                 self.rect.centery -= Tank.velocity * \
